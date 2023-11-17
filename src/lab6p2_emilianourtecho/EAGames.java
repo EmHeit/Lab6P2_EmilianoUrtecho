@@ -4,6 +4,8 @@
  */
 package lab6p2_emilianourtecho;
 
+import java.awt.Color;
+
 /**
  *
  * @author emili
@@ -26,21 +28,96 @@ public class EAGames extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        d_crearCuenta = new javax.swing.JDialog();
+        d_pagina = new javax.swing.JDialog();
+        p_iniciarSesion = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        tf_nombreUsuario = new javax.swing.JTextField();
+        pf_password = new javax.swing.JPasswordField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        b_crearCuenta = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        d_crearCuenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        d_pagina.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        p_iniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        p_iniciarSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        p_iniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        p_iniciarSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Broadway", 0, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setText("Si aun no tiene una cuenta entonces haga");
+        p_iniciarSesion.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 230, -1));
+
+        jLabel2.setFont(new java.awt.Font("Broadway", 2, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Iniciar Sesión");
+        p_iniciarSesion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 270, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        p_iniciarSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 400, 10));
+
+        jLabel3.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Usuario");
+        p_iniciarSesion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 70, -1));
+
+        tf_nombreUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        tf_nombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        p_iniciarSesion.add(tf_nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 330, -1));
+
+        pf_password.setBackground(new java.awt.Color(255, 255, 255));
+        pf_password.setForeground(new java.awt.Color(0, 0, 0));
+        p_iniciarSesion.add(pf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 330, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        p_iniciarSesion.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 440, 10));
+
+        jLabel4.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Password");
+        p_iniciarSesion.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 80, -1));
+
+        b_crearCuenta.setFont(new java.awt.Font("Broadway", 0, 10)); // NOI18N
+        b_crearCuenta.setForeground(new java.awt.Color(102, 102, 102));
+        b_crearCuenta.setText("CLICK AQUI");
+        b_crearCuenta.setBorder(null);
+        b_crearCuenta.setBorderPainted(false);
+        b_crearCuenta.setContentAreaFilled(false);
+        b_crearCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_crearCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_crearCuentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_crearCuentaMouseExited(evt);
+            }
+        });
+        p_iniciarSesion.add(b_crearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
+
+        getContentPane().add(p_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void b_crearCuentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearCuentaMouseEntered
+        b_crearCuenta.setBounds(430, 350, 66, 17);
+        b_crearCuenta.setForeground(Color.black);
+    }//GEN-LAST:event_b_crearCuentaMouseEntered
+
+    private void b_crearCuentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearCuentaMouseExited
+        b_crearCuenta.setBounds(430, 350, 62, 13);
+        b_crearCuenta.setForeground(Color.gray);
+    }//GEN-LAST:event_b_crearCuentaMouseExited
 
     /**
      * @param args the command line arguments
@@ -78,5 +155,17 @@ public class EAGames extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_crearCuenta;
+    private javax.swing.JDialog d_crearCuenta;
+    private javax.swing.JDialog d_pagina;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPanel p_iniciarSesion;
+    private javax.swing.JPasswordField pf_password;
+    private javax.swing.JTextField tf_nombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
