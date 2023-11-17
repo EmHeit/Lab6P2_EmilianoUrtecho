@@ -5,6 +5,8 @@
 package lab6p2_emilianourtecho;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,8 +19,33 @@ public class EAGames extends javax.swing.JFrame {
      */
     public EAGames() {
         initComponents();
+        pack();
+        
+        setLocationRelativeTo(null);
+        setResizable(false);
+        this.repaint();
+        
     }
 
+    
+    public boolean UsuarioExistente(String usuario){
+        for (int i = 0; i < user.size(); i++) {
+            if (usuario.equals(user.get(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean ConfirmarFecha(String fecha){
+        int fechaInt = Integer.parseInt(fecha);
+        int anio = (2023 - fechaInt);
+        for (int i = 0; i < 10; i++) {
+            if (anio > 12) {
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,6 +56,29 @@ public class EAGames extends javax.swing.JFrame {
     private void initComponents() {
 
         d_crearCuenta = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        tf_crearUsuario = new javax.swing.JTextField();
+        tf_nombreOG = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        tf_correo = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
+        tf_crearPassword = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        cb_pais = new javax.swing.JComboBox<>();
+        ff_fechaNacimiento = new javax.swing.JFormattedTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        b_regresar = new javax.swing.JButton();
+        b_crear = new javax.swing.JButton();
         d_pagina = new javax.swing.JDialog();
         p_iniciarSesion = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,16 +91,170 @@ public class EAGames extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         b_crearCuenta = new javax.swing.JButton();
 
+        d_crearCuenta.setPreferredSize(new java.awt.Dimension(700, 400));
+        d_crearCuenta.setSize(new java.awt.Dimension(700, 400));
         d_crearCuenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.setMinimumSize(new java.awt.Dimension(700, 400));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Usuario");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
+
+        jLabel6.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Nombre");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, -1));
+
+        jLabel7.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("CREAR CUENTA");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 10));
+
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 20, 330));
+
+        tf_crearUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        tf_crearUsuario.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_crearUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(tf_crearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, -1));
+
+        tf_nombreOG.setBackground(new java.awt.Color(255, 255, 255));
+        tf_nombreOG.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_nombreOG.setForeground(new java.awt.Color(0, 0, 0));
+        tf_nombreOG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nombreOGActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tf_nombreOG, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 320, -1));
+
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 10));
+
+        jLabel8.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Su Correo Electronico");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 170, -1));
+
+        tf_correo.setBackground(new java.awt.Color(255, 255, 255));
+        tf_correo.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_correo.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(tf_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 320, -1));
+
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 360, 10));
+
+        jLabel9.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Password");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 90, -1));
+
+        tf_crearPassword.setBackground(new java.awt.Color(255, 255, 255));
+        tf_crearPassword.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_crearPassword.setForeground(new java.awt.Color(0, 0, 0));
+        tf_crearPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_crearPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tf_crearPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 320, -1));
+
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, 10));
+
+        jLabel11.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Pais de Residencia");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, -1));
+
+        jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 360, 10));
+
+        cb_pais.setBackground(new java.awt.Color(255, 255, 255));
+        cb_pais.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        cb_pais.setForeground(new java.awt.Color(0, 0, 0));
+        cb_pais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Japan", "Italia", "Alemania", "Francia", "UK", "Sweden" }));
+        jPanel1.add(cb_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, -1));
+
+        ff_fechaNacimiento.setBackground(new java.awt.Color(255, 255, 255));
+        ff_fechaNacimiento.setForeground(new java.awt.Color(0, 0, 0));
+        ff_fechaNacimiento.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        jPanel1.add(ff_fechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 330, -1));
+
+        jLabel12.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Ingrese su año de Nacimiento");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, -1));
+
+        jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 360, 10));
+
+        b_regresar.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
+        b_regresar.setForeground(new java.awt.Color(0, 0, 0));
+        b_regresar.setText("Regresar");
+        b_regresar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_regresar.setContentAreaFilled(false);
+        b_regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_regresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_regresarMouseExited(evt);
+            }
+        });
+        b_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_regresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(b_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 100, 20));
+
+        b_crear.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
+        b_crear.setForeground(new java.awt.Color(0, 0, 0));
+        b_crear.setText("Crear");
+        b_crear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_crear.setContentAreaFilled(false);
+        b_crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_crearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_crearMouseExited(evt);
+            }
+        });
+        b_crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_crearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(b_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 70, 20));
+
+        d_crearCuenta.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        d_pagina.setMinimumSize(new java.awt.Dimension(700, 400));
+        d_pagina.setPreferredSize(new java.awt.Dimension(700, 400));
+        d_pagina.setSize(new java.awt.Dimension(700, 400));
         d_pagina.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(700, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         p_iniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         p_iniciarSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         p_iniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        p_iniciarSesion.setMinimumSize(new java.awt.Dimension(700, 400));
         p_iniciarSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Broadway", 0, 10)); // NOI18N
@@ -73,7 +277,7 @@ public class EAGames extends javax.swing.JFrame {
 
         tf_nombreUsuario.setBackground(new java.awt.Color(255, 255, 255));
         tf_nombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        p_iniciarSesion.add(tf_nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 330, -1));
+        p_iniciarSesion.add(tf_nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 330, -1));
 
         pf_password.setBackground(new java.awt.Color(255, 255, 255));
         pf_password.setForeground(new java.awt.Color(0, 0, 0));
@@ -102,6 +306,11 @@ public class EAGames extends javax.swing.JFrame {
                 b_crearCuentaMouseExited(evt);
             }
         });
+        b_crearCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_crearCuentaActionPerformed(evt);
+            }
+        });
         p_iniciarSesion.add(b_crearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
 
         getContentPane().add(p_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
@@ -118,6 +327,88 @@ public class EAGames extends javax.swing.JFrame {
         b_crearCuenta.setBounds(430, 350, 62, 13);
         b_crearCuenta.setForeground(Color.gray);
     }//GEN-LAST:event_b_crearCuentaMouseExited
+
+    private void b_crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crearCuentaActionPerformed
+        d_crearCuenta.pack();
+        d_crearCuenta.setLocationRelativeTo(this);
+        d_crearCuenta.setVisible(true);
+        
+    }//GEN-LAST:event_b_crearCuentaActionPerformed
+
+    private void tf_crearPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_crearPasswordActionPerformed
+
+    private void tf_nombreOGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreOGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nombreOGActionPerformed
+
+    private void b_regresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_regresarMouseEntered
+        b_regresar.setForeground(Color.gray);
+        b_regresar.setBorderPainted(false);
+    }//GEN-LAST:event_b_regresarMouseEntered
+
+    private void b_regresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_regresarMouseExited
+        b_regresar.setForeground(Color.black);
+        b_regresar.setBorderPainted(true);
+    }//GEN-LAST:event_b_regresarMouseExited
+
+    private void b_crearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearMouseEntered
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);
+    }//GEN-LAST:event_b_crearMouseEntered
+
+    private void b_crearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearMouseExited
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);
+    }//GEN-LAST:event_b_crearMouseExited
+
+    private void b_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_regresarActionPerformed
+        
+        d_crearCuenta.setLocationRelativeTo(null);
+        d_crearCuenta.setVisible(false);        
+    }//GEN-LAST:event_b_regresarActionPerformed
+
+    private void b_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crearActionPerformed
+        String nombreOG = tf_nombreOG.getText();
+        String crearUsuario = tf_crearUsuario.getText();
+        String correo = tf_correo.getText();
+        String password = tf_crearPassword.getText();
+        String fecha = ff_fechaNacimiento.getText();
+        
+        if (nombreOG.isEmpty() && crearUsuario.isEmpty() && correo.isEmpty()
+                && password.isEmpty() && fecha.isEmpty() && cb_pais.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "No ha escrito nada, por favor llene todas las casillas");
+            
+        }else{
+            if (nombreOG.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha ingresado su nombre aun");                
+            }else if(crearUsuario.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su nombre de USUARIO aun");                                
+            }else if(correo.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su correo electronico aun");                                
+            }else if(password.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su PASSWORD aun");                                
+            }else if(fecha.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su fecha de nacimiento aun");                                
+            }else if(cb_pais.getSelectedItem() == null){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su pais de residencia, seleccione una"); 
+            }else{
+                if (UsuarioExistente(crearUsuario)) {
+                    JOptionPane.showMessageDialog(this, "El nombre ya existe, escriba otro porfavor");                    
+                }else if(ConfirmarFecha(fecha)){
+                    JOptionPane.showMessageDialog(this, "Debes ser mayor de 12 años para tener una cuenta");
+                }else{
+                    String pais = (String) cb_pais.getSelectedItem();
+                    User u = new User(crearUsuario, nombreOG, correo, pais, fecha, password);
+                    user.add(u);
+                    d_crearCuenta.setLocationRelativeTo(null);
+                    d_crearCuenta.setVisible(false); 
+                    
+                }             
+            }
+        }                
+    }//GEN-LAST:event_b_crearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,19 +444,44 @@ public class EAGames extends javax.swing.JFrame {
             }
         });
     }
+    
+    ArrayList<User> user = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_crear;
     private javax.swing.JButton b_crearCuenta;
+    private javax.swing.JButton b_regresar;
+    private javax.swing.JComboBox<String> cb_pais;
     private javax.swing.JDialog d_crearCuenta;
     private javax.swing.JDialog d_pagina;
+    private javax.swing.JFormattedTextField ff_fechaNacimiento;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JPanel p_iniciarSesion;
     private javax.swing.JPasswordField pf_password;
+    private javax.swing.JTextField tf_correo;
+    private javax.swing.JTextField tf_crearPassword;
+    private javax.swing.JTextField tf_crearUsuario;
+    private javax.swing.JTextField tf_nombreOG;
     private javax.swing.JTextField tf_nombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
