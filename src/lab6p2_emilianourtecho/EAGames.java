@@ -30,7 +30,7 @@ public class EAGames extends javax.swing.JFrame {
     
     public boolean UsuarioExistente(String usuario){
         for (int i = 0; i < user.size(); i++) {
-            if (usuario.equals(user.get(i))) {
+            if (usuario.equals(user.get(i).getNombreU())) {
                 return true;
             }
         }
@@ -39,13 +39,32 @@ public class EAGames extends javax.swing.JFrame {
     public boolean ConfirmarFecha(String fecha){
         int fechaInt = Integer.parseInt(fecha);
         int anio = (2023 - fechaInt);
-        for (int i = 0; i < 10; i++) {
-            if (anio > 12) {
+        if (fecha.matches("\\d{4}")) {
+            return false;
+        }        
+        
+        return anio > 12;
+    }
+    public boolean UsuarioEntrar(String nombre, String password){
+        String name = tf_nombreUsuario.getText();
+        String pass = pf_password.getText();
+        for (User user1 : user) {
+            if (name.equals(user1.getNombreU()) && pass.equals(user1.getPassword())) {
                 return true;
             }
         }
         return false;
     }
+    public boolean AdminEntrar(String nombre, String password){
+        String name = tf_nombreUsuario1.getText();
+        String pass = pf_password1.getText();
+        for (Admin adm : admin) {
+            if (name.equals(adm.getNombreU()) && pass.equals(adm.getPassword())) {
+                return true;
+            }
+        }
+        return false;
+    }    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,6 +98,7 @@ public class EAGames extends javax.swing.JFrame {
         jSeparator11 = new javax.swing.JSeparator();
         b_regresar = new javax.swing.JButton();
         b_crear = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         d_pagina = new javax.swing.JDialog();
         tp_main = new javax.swing.JTabbedPane();
         p_jugadores = new javax.swing.JPanel();
@@ -109,9 +129,6 @@ public class EAGames extends javax.swing.JFrame {
         jPanel25 = new javax.swing.JPanel();
         d_crearAdmin = new javax.swing.JDialog();
         p_crearCuentaA = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        tf_nombreOG1 = new javax.swing.JTextField();
-        jSeparator9 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         tf_crearUsuario1 = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
@@ -131,6 +148,21 @@ public class EAGames extends javax.swing.JFrame {
         b_crear1 = new javax.swing.JButton();
         b_regresar1 = new javax.swing.JButton();
         jSeparator17 = new javax.swing.JSeparator();
+        jLabel19 = new javax.swing.JLabel();
+        d_iniciarAdmin = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel21 = new javax.swing.JLabel();
+        tf_nombreUsuario1 = new javax.swing.JTextField();
+        jSeparator18 = new javax.swing.JSeparator();
+        jLabel22 = new javax.swing.JLabel();
+        pf_password1 = new javax.swing.JPasswordField();
+        b_iniciarSesionA = new javax.swing.JButton();
+        jSeparator19 = new javax.swing.JSeparator();
+        b_entrarUser = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        b_crearCuentaA = new javax.swing.JButton();
         p_iniciarSesion = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -167,8 +199,8 @@ public class EAGames extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("CREAR CUENTA");
-        p_crearCuentaU.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
+        jLabel7.setText("Como Usuario");
+        p_crearCuentaU.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 230, -1));
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
         p_crearCuentaU.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 10));
@@ -238,6 +270,11 @@ public class EAGames extends javax.swing.JFrame {
         cb_pais.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         cb_pais.setForeground(new java.awt.Color(0, 0, 0));
         cb_pais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Japan", "Italia", "Alemania", "Francia", "UK", "Sweden" }));
+        cb_pais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_paisActionPerformed(evt);
+            }
+        });
         p_crearCuentaU.add(cb_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, -1));
 
         ff_fechaNacimiento.setBackground(new java.awt.Color(255, 255, 255));
@@ -293,6 +330,11 @@ public class EAGames extends javax.swing.JFrame {
             }
         });
         p_crearCuentaU.add(b_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 70, 20));
+
+        jLabel20.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("CREAR CUENTA");
+        p_crearCuentaU.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
 
         d_crearCuenta.getContentPane().add(p_crearCuentaU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
@@ -640,54 +682,36 @@ public class EAGames extends javax.swing.JFrame {
         p_crearCuentaA.setForeground(new java.awt.Color(0, 0, 0));
         p_crearCuentaA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Nombre");
-        p_crearCuentaA.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, -1));
-
-        tf_nombreOG1.setBackground(new java.awt.Color(255, 255, 255));
-        tf_nombreOG1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
-        tf_nombreOG1.setForeground(new java.awt.Color(0, 0, 0));
-        tf_nombreOG1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_nombreOG1ActionPerformed(evt);
-            }
-        });
-        p_crearCuentaA.add(tf_nombreOG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 320, -1));
-
-        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 10));
-
         jLabel13.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Usuario");
-        p_crearCuentaA.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
+        p_crearCuentaA.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, -1));
 
         tf_crearUsuario1.setBackground(new java.awt.Color(255, 255, 255));
         tf_crearUsuario1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         tf_crearUsuario1.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(tf_crearUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, -1));
+        p_crearCuentaA.add(tf_crearUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 320, -1));
 
         jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 10));
+        p_crearCuentaA.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 360, 10));
 
         jLabel14.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Su Correo Electronico");
-        p_crearCuentaA.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 170, -1));
+        p_crearCuentaA.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 170, -1));
 
         tf_correo1.setBackground(new java.awt.Color(255, 255, 255));
         tf_correo1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         tf_correo1.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(tf_correo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 320, -1));
+        p_crearCuentaA.add(tf_correo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 320, -1));
 
         jSeparator13.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 360, 10));
+        p_crearCuentaA.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 360, 10));
 
         jLabel15.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Password");
-        p_crearCuentaA.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 90, -1));
+        p_crearCuentaA.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 90, -1));
 
         tf_crearPassword1.setBackground(new java.awt.Color(255, 255, 255));
         tf_crearPassword1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
@@ -697,42 +721,42 @@ public class EAGames extends javax.swing.JFrame {
                 tf_crearPassword1ActionPerformed(evt);
             }
         });
-        p_crearCuentaA.add(tf_crearPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 320, -1));
+        p_crearCuentaA.add(tf_crearPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 320, -1));
 
         jSeparator14.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, 10));
+        p_crearCuentaA.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 360, 10));
 
         jLabel16.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Pais de Residencia");
-        p_crearCuentaA.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, -1));
+        p_crearCuentaA.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 150, -1));
 
         cb_pais1.setBackground(new java.awt.Color(255, 255, 255));
         cb_pais1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         cb_pais1.setForeground(new java.awt.Color(0, 0, 0));
         cb_pais1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Japan", "Italia", "Alemania", "Francia", "UK", "Sweden" }));
-        p_crearCuentaA.add(cb_pais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, -1));
+        p_crearCuentaA.add(cb_pais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 320, -1));
 
         jSeparator15.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 360, 10));
+        p_crearCuentaA.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 360, 10));
 
         jLabel17.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Ingrese su año de Nacimiento");
-        p_crearCuentaA.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, -1));
+        p_crearCuentaA.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 230, -1));
 
         ff_fechaNacimiento1.setBackground(new java.awt.Color(255, 255, 255));
         ff_fechaNacimiento1.setForeground(new java.awt.Color(0, 0, 0));
         ff_fechaNacimiento1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
-        p_crearCuentaA.add(ff_fechaNacimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 330, -1));
+        p_crearCuentaA.add(ff_fechaNacimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 330, -1));
 
         jSeparator16.setForeground(new java.awt.Color(0, 0, 0));
-        p_crearCuentaA.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 360, 10));
+        p_crearCuentaA.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 360, 10));
 
         jLabel18.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel18.setText("CREAR CUENTA");
-        p_crearCuentaA.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
+        jLabel18.setText("Como Admin");
+        p_crearCuentaA.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 230, -1));
 
         b_crear1.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         b_crear1.setForeground(new java.awt.Color(0, 0, 0));
@@ -779,7 +803,127 @@ public class EAGames extends javax.swing.JFrame {
         jSeparator17.setOrientation(javax.swing.SwingConstants.VERTICAL);
         p_crearCuentaA.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 20, 330));
 
+        jLabel19.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("CREAR CUENTA");
+        p_crearCuentaA.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
+
         d_crearAdmin.getContentPane().add(p_crearCuentaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        d_iniciarAdmin.setMinimumSize(new java.awt.Dimension(700, 400));
+        d_iniciarAdmin.setSize(new java.awt.Dimension(700, 400));
+        d_iniciarAdmin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.setMinimumSize(new java.awt.Dimension(700, 400));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Broadway", 2, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Iniciar Sesión COMO ADMIN");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 580, -1));
+
+        jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 440, 10));
+
+        jLabel21.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Usuario");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 70, -1));
+
+        tf_nombreUsuario1.setBackground(new java.awt.Color(255, 255, 255));
+        tf_nombreUsuario1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(tf_nombreUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 330, -1));
+
+        jSeparator18.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 400, 10));
+
+        jLabel22.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Password");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 80, -1));
+
+        pf_password1.setBackground(new java.awt.Color(255, 255, 255));
+        pf_password1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(pf_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 330, -1));
+
+        b_iniciarSesionA.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
+        b_iniciarSesionA.setForeground(new java.awt.Color(0, 0, 0));
+        b_iniciarSesionA.setText("Iniciar Sesion");
+        b_iniciarSesionA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_iniciarSesionA.setContentAreaFilled(false);
+        b_iniciarSesionA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_iniciarSesionA.setFocusPainted(false);
+        b_iniciarSesionA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_iniciarSesionAMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_iniciarSesionAMouseExited(evt);
+            }
+        });
+        b_iniciarSesionA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_iniciarSesionAActionPerformed(evt);
+            }
+        });
+        jPanel1.add(b_iniciarSesionA, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, -1));
+
+        jSeparator19.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 10, 40));
+
+        b_entrarUser.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
+        b_entrarUser.setForeground(new java.awt.Color(0, 0, 0));
+        b_entrarUser.setText("Entrar Como USER");
+        b_entrarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_entrarUser.setContentAreaFilled(false);
+        b_entrarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_entrarUser.setFocusPainted(false);
+        b_entrarUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_entrarUserMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_entrarUserMouseExited(evt);
+            }
+        });
+        b_entrarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_entrarUserActionPerformed(evt);
+            }
+        });
+        jPanel1.add(b_entrarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 170, -1));
+
+        jLabel23.setFont(new java.awt.Font("Broadway", 0, 10)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel23.setText("Si aun no tiene una cuenta entonces haga");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 230, -1));
+
+        b_crearCuentaA.setFont(new java.awt.Font("Broadway", 0, 10)); // NOI18N
+        b_crearCuentaA.setForeground(new java.awt.Color(102, 102, 102));
+        b_crearCuentaA.setText("CLICK AQUI");
+        b_crearCuentaA.setBorder(null);
+        b_crearCuentaA.setBorderPainted(false);
+        b_crearCuentaA.setContentAreaFilled(false);
+        b_crearCuentaA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_crearCuentaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_crearCuentaAMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_crearCuentaAMouseExited(evt);
+            }
+        });
+        b_crearCuentaA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_crearCuentaAActionPerformed(evt);
+            }
+        });
+        jPanel1.add(b_crearCuentaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
+
+        d_iniciarAdmin.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(700, 400));
@@ -957,9 +1101,9 @@ public class EAGames extends javax.swing.JFrame {
         String password = tf_crearPassword.getText();
         String fecha = ff_fechaNacimiento.getText();
         
-        if (nombreOG.isEmpty() && crearUsuario.isEmpty() && correo.isEmpty()
-                && password.isEmpty() && fecha.isEmpty() && cb_pais.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "No ha escrito nada, por favor llene todas las casillas");
+        if (nombreOG.isEmpty() || crearUsuario.isEmpty() || correo.isEmpty()
+                || password.isEmpty() || fecha.isEmpty() || cb_pais.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "Hay mas de dos casillas vacias, por favor llenelas todas las casillas");
             
         }else{
             if (nombreOG.isEmpty()) {
@@ -979,6 +1123,8 @@ public class EAGames extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "El nombre ya existe, escriba otro porfavor");                    
                 }else if(ConfirmarFecha(fecha)){
                     JOptionPane.showMessageDialog(this, "Debes ser mayor de 12 años para tener una cuenta");
+                }else if(!password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\W).*$")){ // Osman nos enseno esto.
+                    JOptionPane.showMessageDialog(this, "La password debe contener una mayuscula, minuscula y un caracter especial");
                 }else{
                     String pais = (String) cb_pais.getSelectedItem();
                     User u = new User(crearUsuario, nombreOG, correo, pais, fecha, password);
@@ -1002,9 +1148,15 @@ public class EAGames extends javax.swing.JFrame {
     }//GEN-LAST:event_b_iniciarSesionMouseExited
 
     private void b_iniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_iniciarSesionActionPerformed
-        d_pagina.pack();
-        d_pagina.setLocationRelativeTo(this);
-        d_pagina.setVisible(true);        
+        String nombreU = tf_nombreUsuario.getText();
+        String passwords = pf_password.getText();
+        if (UsuarioEntrar(nombreU, passwords)) {
+            d_pagina.pack();
+            d_pagina.setLocationRelativeTo(this);
+            d_pagina.setVisible(true);                
+        }else{
+            JOptionPane.showMessageDialog(this, "Nombre de usuario o password incorrecta");
+        }
     }//GEN-LAST:event_b_iniciarSesionActionPerformed
 
     private void b_entrarAdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_entrarAdminMouseEntered
@@ -1018,42 +1170,135 @@ public class EAGames extends javax.swing.JFrame {
     }//GEN-LAST:event_b_entrarAdminMouseExited
 
     private void b_entrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_entrarAdminActionPerformed
-        d_Admin.pack();
-        d_Admin.setLocationRelativeTo(this);
-        d_Admin.setVisible(true);                
+        d_iniciarAdmin.pack();
+        d_iniciarAdmin.setLocationRelativeTo(this);
+        d_iniciarAdmin.setVisible(true);                
     }//GEN-LAST:event_b_entrarAdminActionPerformed
-
-    private void tf_nombreOG1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreOG1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombreOG1ActionPerformed
 
     private void tf_crearPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPassword1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_crearPassword1ActionPerformed
 
     private void b_crear1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear1MouseEntered
-        // TODO add your handling code here:
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);
     }//GEN-LAST:event_b_crear1MouseEntered
 
     private void b_crear1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear1MouseExited
-        // TODO add your handling code here:
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);
     }//GEN-LAST:event_b_crear1MouseExited
 
     private void b_crear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crear1ActionPerformed
-        // TODO add your handling code here:
+        String crearUsuario = tf_crearUsuario1.getText();
+        String correo = tf_correo1.getText();
+        String password = tf_crearPassword1.getText();
+        String fecha = ff_fechaNacimiento1.getText();
+        
+        if (crearUsuario.isEmpty() || correo.isEmpty()
+                || password.isEmpty() || fecha.isEmpty() || cb_pais.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "Hay mas de dos casillas vacias, por favor llenelas todas las casillas");
+            
+        }else{
+            if(crearUsuario.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su nombre de USUARIO aun");                                
+            }else if(correo.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su correo electronico aun");                                
+            }else if(password.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su PASSWORD aun");                                
+            }else if(fecha.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su fecha de nacimiento aun");                                
+            }else if(cb_pais1.getSelectedItem() == null){
+            JOptionPane.showMessageDialog(this, "No ha ingresado su pais de residencia, seleccione una"); 
+            }else{
+                if (UsuarioExistente(crearUsuario)) {
+                    JOptionPane.showMessageDialog(this, "El nombre ya existe, escriba otro porfavor");                    
+                }else if(ConfirmarFecha(fecha)){
+                    JOptionPane.showMessageDialog(this, "Debes ser mayor de 12 años para tener una cuenta");
+                }else if(!password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\W).*$")){
+                    JOptionPane.showMessageDialog(this, "La password debe contener una mayuscula, minuscula y un caracter especial");
+                }else{
+                    String pais = (String) cb_pais1.getSelectedItem();
+                    Admin a = new Admin(crearUsuario, correo, password, fecha, pais);
+                    admin.add(a);
+                    d_crearAdmin.setLocationRelativeTo(null);
+                    d_crearAdmin.setVisible(false); 
+                }             
+            }
+        }
     }//GEN-LAST:event_b_crear1ActionPerformed
 
     private void b_regresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_regresar1MouseEntered
-        // TODO add your handling code here:
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);        
     }//GEN-LAST:event_b_regresar1MouseEntered
 
     private void b_regresar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_regresar1MouseExited
-        // TODO add your handling code here:
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);        
     }//GEN-LAST:event_b_regresar1MouseExited
 
     private void b_regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_regresar1ActionPerformed
-        // TODO add your handling code here:
+        d_crearAdmin.setLocationRelativeTo(null);
+        d_crearAdmin.setVisible(false);
     }//GEN-LAST:event_b_regresar1ActionPerformed
+
+    private void cb_paisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_paisActionPerformed
+        
+    }//GEN-LAST:event_cb_paisActionPerformed
+
+    private void b_iniciarSesionAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_iniciarSesionAMouseEntered
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);        
+    }//GEN-LAST:event_b_iniciarSesionAMouseEntered
+
+    private void b_iniciarSesionAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_iniciarSesionAMouseExited
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);        
+    }//GEN-LAST:event_b_iniciarSesionAMouseExited
+
+    private void b_iniciarSesionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_iniciarSesionAActionPerformed
+        String nombreU = tf_nombreUsuario1.getText();
+        String passwords = pf_password1.getText();
+        if (AdminEntrar(nombreU, passwords)) {
+            d_Admin.pack();
+            d_Admin.setLocationRelativeTo(this);
+            d_Admin.setVisible(true);                
+        }else{
+            JOptionPane.showMessageDialog(this, "Nombre de usuario o password incorrecta");
+        }        
+    }//GEN-LAST:event_b_iniciarSesionAActionPerformed
+
+    private void b_entrarUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_entrarUserMouseEntered
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);        
+    }//GEN-LAST:event_b_entrarUserMouseEntered
+
+    private void b_entrarUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_entrarUserMouseExited
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);        
+    }//GEN-LAST:event_b_entrarUserMouseExited
+
+    private void b_entrarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_entrarUserActionPerformed
+        d_crearAdmin.setLocationRelativeTo(null);
+        d_crearAdmin.setVisible(false);
+    }//GEN-LAST:event_b_entrarUserActionPerformed
+
+    private void b_crearCuentaAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearCuentaAMouseEntered
+        b_crearCuenta.setBounds(430, 350, 66, 17);
+        b_crearCuenta.setForeground(Color.black);        
+    }//GEN-LAST:event_b_crearCuentaAMouseEntered
+
+    private void b_crearCuentaAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearCuentaAMouseExited
+        b_crearCuenta.setBounds(430, 350, 62, 13);
+        b_crearCuenta.setForeground(Color.gray);        
+    }//GEN-LAST:event_b_crearCuentaAMouseExited
+
+    private void b_crearCuentaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crearCuentaAActionPerformed
+        d_crearAdmin.pack();
+        d_crearAdmin.setLocationRelativeTo(this);
+        d_crearAdmin.setVisible(true);
+    }//GEN-LAST:event_b_crearCuentaAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1091,13 +1336,17 @@ public class EAGames extends javax.swing.JFrame {
     }
     
     ArrayList<User> user = new ArrayList();
+    ArrayList<Admin> admin = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_crear;
     private javax.swing.JButton b_crear1;
     private javax.swing.JButton b_crearCuenta;
+    private javax.swing.JButton b_crearCuentaA;
     private javax.swing.JButton b_entrarAdmin;
+    private javax.swing.JButton b_entrarUser;
     private javax.swing.JButton b_iniciarSesion;
+    private javax.swing.JButton b_iniciarSesionA;
     private javax.swing.JButton b_regresar;
     private javax.swing.JButton b_regresar1;
     private javax.swing.JComboBox<String> cb_pais;
@@ -1105,6 +1354,7 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JDialog d_Admin;
     private javax.swing.JDialog d_crearAdmin;
     private javax.swing.JDialog d_crearCuenta;
+    private javax.swing.JDialog d_iniciarAdmin;
     private javax.swing.JDialog d_pagina;
     private javax.swing.JFormattedTextField ff_fechaNacimiento;
     private javax.swing.JFormattedTextField ff_fechaNacimiento1;
@@ -1118,7 +1368,12 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1127,6 +1382,7 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -1150,6 +1406,8 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -1171,6 +1429,7 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JPanel p_mj;
     private javax.swing.JPanel p_ventas;
     private javax.swing.JPasswordField pf_password;
+    private javax.swing.JPasswordField pf_password1;
     private javax.swing.JTextField tf_correo;
     private javax.swing.JTextField tf_correo1;
     private javax.swing.JTextField tf_crearPassword;
@@ -1178,8 +1437,8 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JTextField tf_crearUsuario;
     private javax.swing.JTextField tf_crearUsuario1;
     private javax.swing.JTextField tf_nombreOG;
-    private javax.swing.JTextField tf_nombreOG1;
     private javax.swing.JTextField tf_nombreUsuario;
+    private javax.swing.JTextField tf_nombreUsuario1;
     private javax.swing.JTabbedPane tp_jugador;
     private javax.swing.JTabbedPane tp_main;
     // End of variables declaration//GEN-END:variables
