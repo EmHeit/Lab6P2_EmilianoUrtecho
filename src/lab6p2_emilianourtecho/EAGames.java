@@ -56,7 +56,7 @@ public class EAGames extends javax.swing.JFrame {
     private void initComponents() {
 
         d_crearCuenta = new javax.swing.JDialog();
-        jPanel1 = new javax.swing.JPanel();
+        p_crearCuentaU = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -80,6 +80,57 @@ public class EAGames extends javax.swing.JFrame {
         b_regresar = new javax.swing.JButton();
         b_crear = new javax.swing.JButton();
         d_pagina = new javax.swing.JDialog();
+        tp_main = new javax.swing.JTabbedPane();
+        p_jugadores = new javax.swing.JPanel();
+        tp_jugador = new javax.swing.JTabbedPane();
+        p_cj = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        p_bj = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        p_mj = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        p_ej = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        p_compra = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        p_ventas = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        p_instMV = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jPanel20 = new javax.swing.JPanel();
+        d_Admin = new javax.swing.JDialog();
+        jPanel21 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel22 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        d_crearAdmin = new javax.swing.JDialog();
+        p_crearCuentaA = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        tf_nombreOG1 = new javax.swing.JTextField();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        tf_crearUsuario1 = new javax.swing.JTextField();
+        jSeparator12 = new javax.swing.JSeparator();
+        jLabel14 = new javax.swing.JLabel();
+        tf_correo1 = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        tf_crearPassword1 = new javax.swing.JTextField();
+        jSeparator14 = new javax.swing.JSeparator();
+        jLabel16 = new javax.swing.JLabel();
+        cb_pais1 = new javax.swing.JComboBox<>();
+        jSeparator15 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        ff_fechaNacimiento1 = new javax.swing.JFormattedTextField();
+        jSeparator16 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        b_crear1 = new javax.swing.JButton();
+        b_regresar1 = new javax.swing.JButton();
+        jSeparator17 = new javax.swing.JSeparator();
         p_iniciarSesion = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -90,43 +141,46 @@ public class EAGames extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         b_crearCuenta = new javax.swing.JButton();
+        b_iniciarSesion = new javax.swing.JButton();
+        b_entrarAdmin = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JSeparator();
 
         d_crearCuenta.setPreferredSize(new java.awt.Dimension(700, 400));
         d_crearCuenta.setSize(new java.awt.Dimension(700, 400));
         d_crearCuenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.setMinimumSize(new java.awt.Dimension(700, 400));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        p_crearCuentaU.setBackground(new java.awt.Color(255, 255, 255));
+        p_crearCuentaU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        p_crearCuentaU.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaU.setMinimumSize(new java.awt.Dimension(700, 400));
+        p_crearCuentaU.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
+        p_crearCuentaU.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Nombre");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, -1));
+        p_crearCuentaU.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, -1));
 
         jLabel7.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("CREAR CUENTA");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
+        p_crearCuentaU.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 10));
+        p_crearCuentaU.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 10));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 20, 330));
+        p_crearCuentaU.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 20, 330));
 
         tf_crearUsuario.setBackground(new java.awt.Color(255, 255, 255));
         tf_crearUsuario.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         tf_crearUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(tf_crearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, -1));
+        p_crearCuentaU.add(tf_crearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, -1));
 
         tf_nombreOG.setBackground(new java.awt.Color(255, 255, 255));
         tf_nombreOG.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
@@ -136,28 +190,28 @@ public class EAGames extends javax.swing.JFrame {
                 tf_nombreOGActionPerformed(evt);
             }
         });
-        jPanel1.add(tf_nombreOG, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 320, -1));
+        p_crearCuentaU.add(tf_nombreOG, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 320, -1));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 10));
+        p_crearCuentaU.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 10));
 
         jLabel8.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Su Correo Electronico");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 170, -1));
+        p_crearCuentaU.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 170, -1));
 
         tf_correo.setBackground(new java.awt.Color(255, 255, 255));
         tf_correo.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         tf_correo.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(tf_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 320, -1));
+        p_crearCuentaU.add(tf_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 320, -1));
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 360, 10));
+        p_crearCuentaU.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 360, 10));
 
         jLabel9.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Password");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 90, -1));
+        p_crearCuentaU.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 90, -1));
 
         tf_crearPassword.setBackground(new java.awt.Color(255, 255, 255));
         tf_crearPassword.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
@@ -167,37 +221,37 @@ public class EAGames extends javax.swing.JFrame {
                 tf_crearPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(tf_crearPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 320, -1));
+        p_crearCuentaU.add(tf_crearPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 320, -1));
 
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, 10));
+        p_crearCuentaU.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, 10));
 
         jLabel11.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Pais de Residencia");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, -1));
+        p_crearCuentaU.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, -1));
 
         jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 360, 10));
+        p_crearCuentaU.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 360, 10));
 
         cb_pais.setBackground(new java.awt.Color(255, 255, 255));
         cb_pais.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
         cb_pais.setForeground(new java.awt.Color(0, 0, 0));
         cb_pais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Japan", "Italia", "Alemania", "Francia", "UK", "Sweden" }));
-        jPanel1.add(cb_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, -1));
+        p_crearCuentaU.add(cb_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, -1));
 
         ff_fechaNacimiento.setBackground(new java.awt.Color(255, 255, 255));
         ff_fechaNacimiento.setForeground(new java.awt.Color(0, 0, 0));
         ff_fechaNacimiento.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
-        jPanel1.add(ff_fechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 330, -1));
+        p_crearCuentaU.add(ff_fechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 330, -1));
 
         jLabel12.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Ingrese su año de Nacimiento");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, -1));
+        p_crearCuentaU.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, -1));
 
         jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 360, 10));
+        p_crearCuentaU.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 360, 10));
 
         b_regresar.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         b_regresar.setForeground(new java.awt.Color(0, 0, 0));
@@ -218,7 +272,7 @@ public class EAGames extends javax.swing.JFrame {
                 b_regresarActionPerformed(evt);
             }
         });
-        jPanel1.add(b_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 100, 20));
+        p_crearCuentaU.add(b_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 100, 20));
 
         b_crear.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         b_crear.setForeground(new java.awt.Color(0, 0, 0));
@@ -238,14 +292,494 @@ public class EAGames extends javax.swing.JFrame {
                 b_crearActionPerformed(evt);
             }
         });
-        jPanel1.add(b_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 70, 20));
+        p_crearCuentaU.add(b_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 70, 20));
 
-        d_crearCuenta.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+        d_crearCuenta.getContentPane().add(p_crearCuentaU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         d_pagina.setMinimumSize(new java.awt.Dimension(700, 400));
         d_pagina.setPreferredSize(new java.awt.Dimension(700, 400));
         d_pagina.setSize(new java.awt.Dimension(700, 400));
         d_pagina.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tp_main.setBackground(new java.awt.Color(255, 255, 255));
+        tp_main.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tp_main.setForeground(new java.awt.Color(0, 0, 0));
+        tp_main.setFont(new java.awt.Font("Broadway", 0, 12)); // NOI18N
+
+        p_jugadores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tp_jugador.setBackground(new java.awt.Color(255, 255, 255));
+        tp_jugador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tp_jugador.setForeground(new java.awt.Color(0, 0, 0));
+        tp_jugador.setFont(new java.awt.Font("Broadway", 0, 12)); // NOI18N
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 694, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout p_cjLayout = new javax.swing.GroupLayout(p_cj);
+        p_cj.setLayout(p_cjLayout);
+        p_cjLayout.setHorizontalGroup(
+            p_cjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        p_cjLayout.setVerticalGroup(
+            p_cjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tp_jugador.addTab("Crear Jugador", p_cj);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 694, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout p_bjLayout = new javax.swing.GroupLayout(p_bj);
+        p_bj.setLayout(p_bjLayout);
+        p_bjLayout.setHorizontalGroup(
+            p_bjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        p_bjLayout.setVerticalGroup(
+            p_bjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tp_jugador.addTab("Buscar Jugador", p_bj);
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 694, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout p_mjLayout = new javax.swing.GroupLayout(p_mj);
+        p_mj.setLayout(p_mjLayout);
+        p_mjLayout.setHorizontalGroup(
+            p_mjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        p_mjLayout.setVerticalGroup(
+            p_mjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tp_jugador.addTab("Modificar Jugador", p_mj);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 694, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout p_ejLayout = new javax.swing.GroupLayout(p_ej);
+        p_ej.setLayout(p_ejLayout);
+        p_ejLayout.setHorizontalGroup(
+            p_ejLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        p_ejLayout.setVerticalGroup(
+            p_ejLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tp_jugador.addTab("Eliminar Jugador", p_ej);
+
+        p_jugadores.add(tp_jugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 368, Short.MAX_VALUE)
+        );
+
+        p_jugadores.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
+
+        tp_main.addTab("Jugadores", p_jugadores);
+
+        p_compra.setEnabled(false);
+
+        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel18.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 368, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout p_compraLayout = new javax.swing.GroupLayout(p_compra);
+        p_compra.setLayout(p_compraLayout);
+        p_compraLayout.setHorizontalGroup(
+            p_compraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(p_compraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_compraLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        p_compraLayout.setVerticalGroup(
+            p_compraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
+            .addGroup(p_compraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_compraLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        tp_main.addTab("Compra", p_compra);
+
+        p_ventas.setEnabled(false);
+
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel19.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 368, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout p_ventasLayout = new javax.swing.GroupLayout(p_ventas);
+        p_ventas.setLayout(p_ventasLayout);
+        p_ventasLayout.setHorizontalGroup(
+            p_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(p_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_ventasLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        p_ventasLayout.setVerticalGroup(
+            p_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
+            .addGroup(p_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_ventasLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        tp_main.addTab("Ventas", p_ventas);
+
+        p_instMV.setEnabled(false);
+        p_instMV.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jList1.setBackground(new java.awt.Color(255, 255, 255));
+        jList1.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
+        jList1.setForeground(new java.awt.Color(0, 0, 0));
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        p_instMV.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 6, 290, 355));
+
+        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel20.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 368, Short.MAX_VALUE)
+        );
+
+        p_instMV.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
+
+        tp_main.addTab("Instalacion de Mejoras Visuales", p_instMV);
+
+        d_pagina.getContentPane().add(tp_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        d_Admin.setMinimumSize(new java.awt.Dimension(700, 400));
+        d_Admin.setSize(new java.awt.Dimension(700, 400));
+        d_Admin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel21.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel21.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Crear Carro", jPanel22);
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar Carro", jPanel23);
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Listar Carro", jPanel24);
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 367, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Modificar Carro", jPanel25);
+
+        jPanel21.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        d_Admin.getContentPane().add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+
+        d_crearAdmin.setMinimumSize(new java.awt.Dimension(700, 400));
+        d_crearAdmin.setPreferredSize(new java.awt.Dimension(700, 400));
+        d_crearAdmin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        p_crearCuentaA.setBackground(new java.awt.Color(255, 255, 255));
+        p_crearCuentaA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        p_crearCuentaA.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Nombre");
+        p_crearCuentaA.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 70, -1));
+
+        tf_nombreOG1.setBackground(new java.awt.Color(255, 255, 255));
+        tf_nombreOG1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_nombreOG1.setForeground(new java.awt.Color(0, 0, 0));
+        tf_nombreOG1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nombreOG1ActionPerformed(evt);
+            }
+        });
+        p_crearCuentaA.add(tf_nombreOG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 320, -1));
+
+        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 10));
+
+        jLabel13.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Usuario");
+        p_crearCuentaA.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
+
+        tf_crearUsuario1.setBackground(new java.awt.Color(255, 255, 255));
+        tf_crearUsuario1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_crearUsuario1.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(tf_crearUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, -1));
+
+        jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 360, 10));
+
+        jLabel14.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Su Correo Electronico");
+        p_crearCuentaA.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 170, -1));
+
+        tf_correo1.setBackground(new java.awt.Color(255, 255, 255));
+        tf_correo1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_correo1.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(tf_correo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 320, -1));
+
+        jSeparator13.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 360, 10));
+
+        jLabel15.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Password");
+        p_crearCuentaA.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 90, -1));
+
+        tf_crearPassword1.setBackground(new java.awt.Color(255, 255, 255));
+        tf_crearPassword1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        tf_crearPassword1.setForeground(new java.awt.Color(0, 0, 0));
+        tf_crearPassword1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_crearPassword1ActionPerformed(evt);
+            }
+        });
+        p_crearCuentaA.add(tf_crearPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 320, -1));
+
+        jSeparator14.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, 10));
+
+        jLabel16.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Pais de Residencia");
+        p_crearCuentaA.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, -1));
+
+        cb_pais1.setBackground(new java.awt.Color(255, 255, 255));
+        cb_pais1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        cb_pais1.setForeground(new java.awt.Color(0, 0, 0));
+        cb_pais1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Japan", "Italia", "Alemania", "Francia", "UK", "Sweden" }));
+        p_crearCuentaA.add(cb_pais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, -1));
+
+        jSeparator15.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 360, 10));
+
+        jLabel17.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Ingrese su año de Nacimiento");
+        p_crearCuentaA.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, -1));
+
+        ff_fechaNacimiento1.setBackground(new java.awt.Color(255, 255, 255));
+        ff_fechaNacimiento1.setForeground(new java.awt.Color(0, 0, 0));
+        ff_fechaNacimiento1.setFont(new java.awt.Font("OCR A Extended", 1, 10)); // NOI18N
+        p_crearCuentaA.add(ff_fechaNacimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 330, -1));
+
+        jSeparator16.setForeground(new java.awt.Color(0, 0, 0));
+        p_crearCuentaA.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 360, 10));
+
+        jLabel18.setFont(new java.awt.Font("Broadway", 2, 30)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("CREAR CUENTA");
+        p_crearCuentaA.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, -1));
+
+        b_crear1.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
+        b_crear1.setForeground(new java.awt.Color(0, 0, 0));
+        b_crear1.setText("Crear");
+        b_crear1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_crear1.setContentAreaFilled(false);
+        b_crear1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_crear1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_crear1MouseExited(evt);
+            }
+        });
+        b_crear1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_crear1ActionPerformed(evt);
+            }
+        });
+        p_crearCuentaA.add(b_crear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 70, 20));
+
+        b_regresar1.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
+        b_regresar1.setForeground(new java.awt.Color(0, 0, 0));
+        b_regresar1.setText("Regresar");
+        b_regresar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_regresar1.setContentAreaFilled(false);
+        b_regresar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_regresar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_regresar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_regresar1MouseExited(evt);
+            }
+        });
+        b_regresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_regresar1ActionPerformed(evt);
+            }
+        });
+        p_crearCuentaA.add(b_regresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 100, 20));
+
+        jSeparator17.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator17.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        p_crearCuentaA.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 20, 330));
+
+        d_crearAdmin.getContentPane().add(p_crearCuentaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(700, 400));
@@ -264,8 +798,8 @@ public class EAGames extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Broadway", 2, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Iniciar Sesión");
-        p_iniciarSesion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 270, -1));
+        jLabel2.setText("Iniciar Sesión COMO USUARIO");
+        p_iniciarSesion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 580, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         p_iniciarSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 400, 10));
@@ -273,7 +807,7 @@ public class EAGames extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Broadway", 2, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Usuario");
-        p_iniciarSesion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 70, -1));
+        p_iniciarSesion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 70, -1));
 
         tf_nombreUsuario.setBackground(new java.awt.Color(255, 255, 255));
         tf_nombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
@@ -312,6 +846,53 @@ public class EAGames extends javax.swing.JFrame {
             }
         });
         p_iniciarSesion.add(b_crearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
+
+        b_iniciarSesion.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
+        b_iniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        b_iniciarSesion.setText("Iniciar Sesion");
+        b_iniciarSesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_iniciarSesion.setContentAreaFilled(false);
+        b_iniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_iniciarSesion.setFocusPainted(false);
+        b_iniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_iniciarSesionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_iniciarSesionMouseExited(evt);
+            }
+        });
+        b_iniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_iniciarSesionActionPerformed(evt);
+            }
+        });
+        p_iniciarSesion.add(b_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, -1));
+
+        b_entrarAdmin.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
+        b_entrarAdmin.setForeground(new java.awt.Color(0, 0, 0));
+        b_entrarAdmin.setText("Entrar Como Admin");
+        b_entrarAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        b_entrarAdmin.setContentAreaFilled(false);
+        b_entrarAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_entrarAdmin.setFocusPainted(false);
+        b_entrarAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                b_entrarAdminMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                b_entrarAdminMouseExited(evt);
+            }
+        });
+        b_entrarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_entrarAdminActionPerformed(evt);
+            }
+        });
+        p_iniciarSesion.add(b_entrarAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 170, -1));
+
+        jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        p_iniciarSesion.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 10, 40));
 
         getContentPane().add(p_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
@@ -410,6 +991,70 @@ public class EAGames extends javax.swing.JFrame {
         }                
     }//GEN-LAST:event_b_crearActionPerformed
 
+    private void b_iniciarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_iniciarSesionMouseEntered
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);        
+    }//GEN-LAST:event_b_iniciarSesionMouseEntered
+
+    private void b_iniciarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_iniciarSesionMouseExited
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);        
+    }//GEN-LAST:event_b_iniciarSesionMouseExited
+
+    private void b_iniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_iniciarSesionActionPerformed
+        d_pagina.pack();
+        d_pagina.setLocationRelativeTo(this);
+        d_pagina.setVisible(true);        
+    }//GEN-LAST:event_b_iniciarSesionActionPerformed
+
+    private void b_entrarAdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_entrarAdminMouseEntered
+        b_crear.setForeground(Color.gray);
+        b_crear.setBorderPainted(false);               
+    }//GEN-LAST:event_b_entrarAdminMouseEntered
+
+    private void b_entrarAdminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_entrarAdminMouseExited
+        b_crear.setForeground(Color.black);
+        b_crear.setBorderPainted(true);                
+    }//GEN-LAST:event_b_entrarAdminMouseExited
+
+    private void b_entrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_entrarAdminActionPerformed
+        d_Admin.pack();
+        d_Admin.setLocationRelativeTo(this);
+        d_Admin.setVisible(true);                
+    }//GEN-LAST:event_b_entrarAdminActionPerformed
+
+    private void tf_nombreOG1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreOG1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nombreOG1ActionPerformed
+
+    private void tf_crearPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPassword1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_crearPassword1ActionPerformed
+
+    private void b_crear1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_crear1MouseEntered
+
+    private void b_crear1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crear1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_crear1MouseExited
+
+    private void b_crear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crear1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_crear1ActionPerformed
+
+    private void b_regresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_regresar1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_regresar1MouseEntered
+
+    private void b_regresar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_regresar1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_regresar1MouseExited
+
+    private void b_regresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_regresar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_regresar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -449,15 +1094,30 @@ public class EAGames extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_crear;
+    private javax.swing.JButton b_crear1;
     private javax.swing.JButton b_crearCuenta;
+    private javax.swing.JButton b_entrarAdmin;
+    private javax.swing.JButton b_iniciarSesion;
     private javax.swing.JButton b_regresar;
+    private javax.swing.JButton b_regresar1;
     private javax.swing.JComboBox<String> cb_pais;
+    private javax.swing.JComboBox<String> cb_pais1;
+    private javax.swing.JDialog d_Admin;
+    private javax.swing.JDialog d_crearAdmin;
     private javax.swing.JDialog d_crearCuenta;
     private javax.swing.JDialog d_pagina;
     private javax.swing.JFormattedTextField ff_fechaNacimiento;
+    private javax.swing.JFormattedTextField ff_fechaNacimiento1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -466,22 +1126,61 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel p_bj;
+    private javax.swing.JPanel p_cj;
+    private javax.swing.JPanel p_compra;
+    private javax.swing.JPanel p_crearCuentaA;
+    private javax.swing.JPanel p_crearCuentaU;
+    private javax.swing.JPanel p_ej;
     private javax.swing.JPanel p_iniciarSesion;
+    private javax.swing.JPanel p_instMV;
+    private javax.swing.JPanel p_jugadores;
+    private javax.swing.JPanel p_mj;
+    private javax.swing.JPanel p_ventas;
     private javax.swing.JPasswordField pf_password;
     private javax.swing.JTextField tf_correo;
+    private javax.swing.JTextField tf_correo1;
     private javax.swing.JTextField tf_crearPassword;
+    private javax.swing.JTextField tf_crearPassword1;
     private javax.swing.JTextField tf_crearUsuario;
+    private javax.swing.JTextField tf_crearUsuario1;
     private javax.swing.JTextField tf_nombreOG;
+    private javax.swing.JTextField tf_nombreOG1;
     private javax.swing.JTextField tf_nombreUsuario;
+    private javax.swing.JTabbedPane tp_jugador;
+    private javax.swing.JTabbedPane tp_main;
     // End of variables declaration//GEN-END:variables
 }
