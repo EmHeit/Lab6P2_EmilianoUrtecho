@@ -7,6 +7,7 @@ package lab6p2_emilianourtecho;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -105,8 +106,17 @@ public class EAGames extends javax.swing.JFrame {
         tp_jugador = new javax.swing.JTabbedPane();
         p_cj = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        tf_nombre = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        tf_puntos = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        tf_dinero = new javax.swing.JTextField();
+        b_crearP = new javax.swing.JButton();
         p_bj = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        t_listarJ = new javax.swing.JTable();
         p_mj = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         p_ej = new javax.swing.JPanel();
@@ -125,9 +135,28 @@ public class EAGames extends javax.swing.JFrame {
         jPanel21 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel22 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        b_crearC = new javax.swing.JButton();
         jPanel23 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
         jPanel24 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        t_listarC = new javax.swing.JTable();
         jPanel25 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
         d_crearAdmin = new javax.swing.JDialog();
         p_crearCuentaA = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -359,17 +388,46 @@ public class EAGames extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
-        );
+        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Ingrese Nombre del Jugador:");
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        tf_nombre.setBackground(new java.awt.Color(255, 255, 255));
+        tf_nombre.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(tf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 170, -1));
+
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Puntos de Reputacion: ");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        tf_puntos.setEditable(false);
+        tf_puntos.setBackground(new java.awt.Color(255, 255, 255));
+        tf_puntos.setForeground(new java.awt.Color(0, 0, 0));
+        tf_puntos.setText("100 p");
+        jPanel2.add(tf_puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 170, -1));
+
+        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("Dinero:");
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        tf_dinero.setEditable(false);
+        tf_dinero.setBackground(new java.awt.Color(255, 255, 255));
+        tf_dinero.setForeground(new java.awt.Color(0, 0, 0));
+        tf_dinero.setText("150000");
+        jPanel2.add(tf_dinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, -1));
+
+        b_crearP.setText("Crear");
+        b_crearP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_crearP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_crearPActionPerformed(evt);
+            }
+        });
+        jPanel2.add(b_crearP, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 170, -1));
 
         javax.swing.GroupLayout p_cjLayout = new javax.swing.GroupLayout(p_cj);
         p_cj.setLayout(p_cjLayout);
@@ -379,7 +437,7 @@ public class EAGames extends javax.swing.JFrame {
         );
         p_cjLayout.setVerticalGroup(
             p_cjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
 
         tp_jugador.addTab("Crear Jugador", p_cj);
@@ -387,55 +445,62 @@ public class EAGames extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
-        );
+        t_listarJ.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Puntos", "Dinero"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(t_listarJ);
+
+        jPanel4.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 510, 220));
 
         javax.swing.GroupLayout p_bjLayout = new javax.swing.GroupLayout(p_bj);
         p_bj.setLayout(p_bjLayout);
         p_bjLayout.setHorizontalGroup(
             p_bjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
         );
         p_bjLayout.setVerticalGroup(
             p_bjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(p_bjLayout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 102, Short.MAX_VALUE))
         );
 
-        tp_jugador.addTab("Buscar Jugador", p_bj);
+        tp_jugador.addTab("Listar Jugador", p_bj);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setForeground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
-        );
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout p_mjLayout = new javax.swing.GroupLayout(p_mj);
         p_mj.setLayout(p_mjLayout);
         p_mjLayout.setHorizontalGroup(
             p_mjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
         );
         p_mjLayout.setVerticalGroup(
             p_mjLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(p_mjLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 102, Short.MAX_VALUE))
         );
 
         tp_jugador.addTab("Modificar Jugador", p_mj);
@@ -443,32 +508,24 @@ public class EAGames extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setForeground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
-        );
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout p_ejLayout = new javax.swing.GroupLayout(p_ej);
         p_ej.setLayout(p_ejLayout);
         p_ejLayout.setHorizontalGroup(
             p_ejLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
         );
         p_ejLayout.setVerticalGroup(
             p_ejLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(p_ejLayout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 105, Short.MAX_VALUE))
         );
 
         tp_jugador.addTab("Eliminar Jugador", p_ej);
 
-        p_jugadores.add(tp_jugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, -1, -1));
+        p_jugadores.add(tp_jugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 690, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -478,14 +535,14 @@ public class EAGames extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 688, Short.MAX_VALUE)
+            .addGap(0, 698, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 368, Short.MAX_VALUE)
         );
 
-        p_jugadores.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 370));
+        p_jugadores.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
 
         tp_main.addTab("Jugadores", p_jugadores);
 
@@ -635,55 +692,134 @@ public class EAGames extends javax.swing.JFrame {
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
-        );
+        jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("Ingrese el pais de residencia del carro: ");
+        jPanel8.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("Ingrese marca de carro: ");
+        jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 16, -1, -1));
+
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Ingrese el modelo del carro: ");
+        jPanel8.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("Ingrese el color del carro: ");
+        jPanel8.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel8.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 170, -1));
+
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel8.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 170, -1));
+
+        jFormattedTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jFormattedTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel8.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, -1));
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Color");
+        jPanel8.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, -1));
+
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setText("Ingrese el precio del carro: ");
+        jPanel8.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados Unidos", "Japan", "Italia", "Alemania", "Francia", "UK", "Sweden" }));
+        jPanel8.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 220, -1));
+
+        b_crearC.setText("Crear");
+        b_crearC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_crearC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_crearCActionPerformed(evt);
+            }
+        });
+        jPanel8.add(b_crearC, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
+
+        jPanel22.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
 
         jTabbedPane1.addTab("Crear Carro", jPanel22);
 
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
-        );
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel9.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jList3);
+
+        jPanel9.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 272, 301));
+
+        jPanel23.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
 
         jTabbedPane1.addTab("Modificar Carro", jPanel23);
 
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
-        );
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        t_listarC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Modelo", "Marca", "Color", "Pais", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(t_listarC);
+
+        jPanel10.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 550, 310));
+
+        jPanel24.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
 
         jTabbedPane1.addTab("Listar Carro", jPanel24);
 
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
-        );
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel11.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel25.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
 
         jTabbedPane1.addTab("Modificar Carro", jPanel25);
 
@@ -1320,6 +1456,40 @@ public class EAGames extends javax.swing.JFrame {
         d_crearAdmin.setVisible(true);
     }//GEN-LAST:event_b_crearCuentaAActionPerformed
 
+    private void b_crearCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crearCActionPerformed
+        DefaultTableModel tbl = (DefaultTableModel) t_listarC.getModel();
+        String modelo = jTextField5.getText();
+        String marca = jTextField4.getText();
+        String pais = (String) jComboBox1.getSelectedItem();
+        String precio = jFormattedTextField1.getText();
+        if (modelo.isEmpty() || marca.isEmpty() || pais.isEmpty() || precio.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha pasado nada");
+        }else{
+            for (int i = 0; i < tbl.getRowCount(); i++) {
+                modelo = tbl.getValueAt(i, 0).toString();
+                marca = tbl.getValueAt(i, 1).toString();                
+                pais = tbl.getValueAt(i, 2).toString();
+                precio = tbl.getValueAt(i, 3).toString();                
+            }
+        }
+    }//GEN-LAST:event_b_crearCActionPerformed
+
+    private void b_crearPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_crearPActionPerformed
+        DefaultTableModel tbl = (DefaultTableModel) t_listarJ.getModel();
+        String nombre = tf_nombre.getText();
+        String puntos = tf_puntos.getText();
+        String dinero = tf_dinero.getText();
+        if (nombre.isEmpty() || puntos.isEmpty() || dinero.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No ha pasado nada");
+        }else{
+            for (int i = 0; i < tbl.getRowCount(); i++) {
+                nombre = tbl.getValueAt(i, 0).toString();
+                puntos = tbl.getValueAt(i, 1).toString();                
+                dinero = tbl.getValueAt(i, 2).toString();
+            }
+        }        
+    }//GEN-LAST:event_b_crearPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1361,8 +1531,10 @@ public class EAGames extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_crear;
     private javax.swing.JButton b_crear1;
+    private javax.swing.JButton b_crearC;
     private javax.swing.JButton b_crearCuenta;
     private javax.swing.JButton b_crearCuentaA;
+    private javax.swing.JButton b_crearP;
     private javax.swing.JButton b_entrarAdmin;
     private javax.swing.JButton b_entrarUser;
     private javax.swing.JButton b_iniciarSesion;
@@ -1378,6 +1550,9 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JDialog d_pagina;
     private javax.swing.JFormattedTextField ff_fechaNacimiento;
     private javax.swing.JFormattedTextField ff_fechaNacimiento1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1394,7 +1569,15 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1402,7 +1585,10 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -1417,7 +1603,12 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1438,6 +1629,8 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel p_bj;
     private javax.swing.JPanel p_cj;
     private javax.swing.JPanel p_compra;
@@ -1451,15 +1644,20 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JPanel p_ventas;
     private javax.swing.JPasswordField pf_password;
     private javax.swing.JPasswordField pf_password1;
+    private javax.swing.JTable t_listarC;
+    private javax.swing.JTable t_listarJ;
     private javax.swing.JTextField tf_correo;
     private javax.swing.JTextField tf_correo1;
     private javax.swing.JTextField tf_crearPassword;
     private javax.swing.JTextField tf_crearPassword1;
     private javax.swing.JTextField tf_crearUsuario;
     private javax.swing.JTextField tf_crearUsuario1;
+    private javax.swing.JTextField tf_dinero;
+    private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombreOG;
     private javax.swing.JTextField tf_nombreUsuario;
     private javax.swing.JTextField tf_nombreUsuario1;
+    private javax.swing.JTextField tf_puntos;
     private javax.swing.JTabbedPane tp_jugador;
     private javax.swing.JTabbedPane tp_main;
     // End of variables declaration//GEN-END:variables

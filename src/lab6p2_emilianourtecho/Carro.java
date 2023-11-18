@@ -20,6 +20,8 @@ public class Carro {
     String marca;
     List<String> mejorasVisuales;
     boolean Reconstruido;
+    String fecha;
+    String pais;
     
     public Carro(String Modelo, String Color, double precio, String marca, List<String> mejorasVisuales, boolean Reconstruido){
         this.Modelo = Modelo;
@@ -29,11 +31,53 @@ public class Carro {
         this.mejorasVisuales = mejorasVisuales;
         this.Reconstruido = Reconstruido;
     }
+
+    public Carro(ArrayList<Jugador> jugadores, String Modelo, String Color, double precio, String marca, List<String> mejorasVisuales, boolean Reconstruido, String fecha, String pais) {
+        this.jugadores = jugadores;
+        this.Modelo = Modelo;
+        this.Color = Color;
+        this.precio = precio;
+        this.marca = marca;
+        this.mejorasVisuales = mejorasVisuales;
+        this.Reconstruido = Reconstruido;
+        this.fecha = fecha;
+        this.pais = pais;
+    }
     
-    
+    public ArrayList<Jugador> getJugadores(){    
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public boolean isReconstruido() {
+        return Reconstruido;
+    }
+
+    public void setReconstruido(boolean Reconstruido) {
+        this.Reconstruido = Reconstruido;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
     //GETTERS
-    
-    public boolean getReconstruido(){
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public boolean getReconstruido() {
         return Reconstruido;
     }
     
