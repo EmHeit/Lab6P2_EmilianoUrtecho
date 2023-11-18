@@ -120,6 +120,7 @@ public class EAGames extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jPanel20 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         d_Admin = new javax.swing.JDialog();
         jPanel21 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -477,14 +478,14 @@ public class EAGames extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+            .addGap(0, 688, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 368, Short.MAX_VALUE)
         );
 
-        p_jugadores.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 370));
+        p_jugadores.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 370));
 
         tp_main.addTab("Jugadores", p_jugadores);
 
@@ -602,7 +603,24 @@ public class EAGames extends javax.swing.JFrame {
 
         tp_main.addTab("Instalacion de Mejoras Visuales", p_instMV);
 
-        d_pagina.getContentPane().add(tp_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
+        d_pagina.getContentPane().add(tp_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 400));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 728, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 398, Short.MAX_VALUE)
+        );
+
+        d_pagina.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 400));
 
         d_Admin.setMinimumSize(new java.awt.Dimension(700, 400));
         d_Admin.setSize(new java.awt.Dimension(700, 400));
@@ -1121,7 +1139,7 @@ public class EAGames extends javax.swing.JFrame {
             }else{
                 if (UsuarioExistente(crearUsuario)) {
                     JOptionPane.showMessageDialog(this, "El nombre ya existe, escriba otro porfavor");                    
-                }else if(ConfirmarFecha(fecha)){
+                }else if(!ConfirmarFecha(fecha)){
                     JOptionPane.showMessageDialog(this, "Debes ser mayor de 12 años para tener una cuenta");
                 }else if(!password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\W).*$")){ // Osman nos enseno esto.
                     JOptionPane.showMessageDialog(this, "La password debe contener una mayuscula, minuscula y un caracter especial");
@@ -1172,7 +1190,8 @@ public class EAGames extends javax.swing.JFrame {
     private void b_entrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_entrarAdminActionPerformed
         d_iniciarAdmin.pack();
         d_iniciarAdmin.setLocationRelativeTo(this);
-        d_iniciarAdmin.setVisible(true);                
+        d_iniciarAdmin.setVisible(true);
+        p_iniciarSesion.setVisible(false);
     }//GEN-LAST:event_b_entrarAdminActionPerformed
 
     private void tf_crearPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPassword1ActionPerformed
@@ -1213,7 +1232,7 @@ public class EAGames extends javax.swing.JFrame {
             }else{
                 if (UsuarioExistente(crearUsuario)) {
                     JOptionPane.showMessageDialog(this, "El nombre ya existe, escriba otro porfavor");                    
-                }else if(ConfirmarFecha(fecha)){
+                }else if(!ConfirmarFecha(fecha)){
                     JOptionPane.showMessageDialog(this, "Debes ser mayor de 12 años para tener una cuenta");
                 }else if(!password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\W).*$")){
                     JOptionPane.showMessageDialog(this, "La password debe contener una mayuscula, minuscula y un caracter especial");
@@ -1280,8 +1299,9 @@ public class EAGames extends javax.swing.JFrame {
     }//GEN-LAST:event_b_entrarUserMouseExited
 
     private void b_entrarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_entrarUserActionPerformed
-        d_crearAdmin.setLocationRelativeTo(null);
-        d_crearAdmin.setVisible(false);
+        d_iniciarAdmin.setLocationRelativeTo(null);
+        d_iniciarAdmin.setVisible(false);
+        p_iniciarSesion.setVisible(true);
     }//GEN-LAST:event_b_entrarUserActionPerformed
 
     private void b_crearCuentaAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_crearCuentaAMouseEntered
@@ -1396,6 +1416,7 @@ public class EAGames extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
